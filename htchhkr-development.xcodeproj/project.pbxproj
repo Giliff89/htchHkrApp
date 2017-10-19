@@ -12,9 +12,16 @@
 		33C337E01F96BFD3001AAEF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C337DE1F96BFD3001AAEF3 /* Main.storyboard */; };
 		33C337E21F96BFD3001AAEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C337E11F96BFD3001AAEF3 /* Assets.xcassets */; };
 		33C337E51F96BFD3001AAEF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C337E31F96BFD3001AAEF3 /* LaunchScreen.storyboard */; };
+		33C337F11F993D1A001AAEF3 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C337F01F993D1A001AAEF3 /* GradientView.swift */; };
+		33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338101F99470F001AAEF3 /* RoundImageView.swift */; };
+		33C338131F994843001AAEF3 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338121F994843001AAEF3 /* RoundedShadowView.swift */; };
+		33C338151F994947001AAEF3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338141F994947001AAEF3 /* CircleView.swift */; };
+		33C338171F994B77001AAEF3 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338161F994B77001AAEF3 /* RoundedShadowButton.swift */; };
+		65C2960E772AFF2761401069 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_htchhkr_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C337D71F96BFD3001AAEF3 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C337DA1F96BFD3001AAEF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C337DC1F96BFD3001AAEF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,14 @@
 		33C337E11F96BFD3001AAEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C337E41F96BFD3001AAEF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33C337E61F96BFD3001AAEF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33C337EC1F96C23B001AAEF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33C337F01F993D1A001AAEF3 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		33C338101F99470F001AAEF3 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		33C338121F994843001AAEF3 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		33C338141F994947001AAEF3 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		33C338161F994B77001AAEF3 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
+		ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C2960E772AFF2761401069 /* Pods_htchhkr_development.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,8 @@
 			children = (
 				33C337D91F96BFD3001AAEF3 /* htchhkr-development */,
 				33C337D81F96BFD3001AAEF3 /* Products */,
+				BC1B5D5259A6D2BC2BA70259 /* Pods */,
+				D0156D3FADD1B503548DA30E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +72,61 @@
 		33C337D91F96BFD3001AAEF3 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				33C337EF1F993CE4001AAEF3 /* Controller */,
+				33C337EE1F993CDF001AAEF3 /* View */,
+				33C337ED1F993CD8001AAEF3 /* Model */,
 				33C337DA1F96BFD3001AAEF3 /* AppDelegate.swift */,
 				33C337DC1F96BFD3001AAEF3 /* ViewController.swift */,
 				33C337DE1F96BFD3001AAEF3 /* Main.storyboard */,
 				33C337E11F96BFD3001AAEF3 /* Assets.xcassets */,
 				33C337E31F96BFD3001AAEF3 /* LaunchScreen.storyboard */,
+				33C337EC1F96C23B001AAEF3 /* GoogleService-Info.plist */,
 				33C337E61F96BFD3001AAEF3 /* Info.plist */,
 			);
 			path = "htchhkr-development";
+			sourceTree = "<group>";
+		};
+		33C337ED1F993CD8001AAEF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33C337EE1F993CDF001AAEF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33C337F01F993D1A001AAEF3 /* GradientView.swift */,
+				33C338101F99470F001AAEF3 /* RoundImageView.swift */,
+				33C338121F994843001AAEF3 /* RoundedShadowView.swift */,
+				33C338141F994947001AAEF3 /* CircleView.swift */,
+				33C338161F994B77001AAEF3 /* RoundedShadowButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33C337EF1F993CE4001AAEF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC1B5D5259A6D2BC2BA70259 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */,
+				ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0156D3FADD1B503548DA30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33C337E91F96BFD3001AAEF3 /* Build configuration list for PBXNativeTarget "htchhkr-development" */;
 			buildPhases = (
+				B76234EEC8FCD657F50F78AA /* [CP] Check Pods Manifest.lock */,
 				33C337D31F96BFD3001AAEF3 /* Sources */,
 				33C337D41F96BFD3001AAEF3 /* Frameworks */,
 				33C337D51F96BFD3001AAEF3 /* Resources */,
+				B8C7650F4A1ACBE84AD24931 /* [CP] Embed Pods Frameworks */,
+				8BE0913CA8352AA1E1A98B15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +198,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8BE0913CA8352AA1E1A98B15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B76234EEC8FCD657F50F78AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C7650F4A1ACBE84AD24931 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33C337D31F96BFD3001AAEF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C338171F994B77001AAEF3 /* RoundedShadowButton.swift in Sources */,
+				33C338151F994947001AAEF3 /* CircleView.swift in Sources */,
 				33C337DD1F96BFD3001AAEF3 /* ViewController.swift in Sources */,
+				33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */,
+				33C338131F994843001AAEF3 /* RoundedShadowView.swift in Sources */,
 				33C337DB1F96BFD3001AAEF3 /* AppDelegate.swift in Sources */,
+				33C337F11F993D1A001AAEF3 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +392,7 @@
 		};
 		33C337EA1F96BFD3001AAEF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CL59C3LYC3;
@@ -285,6 +407,7 @@
 		};
 		33C337EB1F96BFD3001AAEF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CL59C3LYC3;
