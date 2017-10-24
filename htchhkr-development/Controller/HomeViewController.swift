@@ -14,6 +14,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var actionButtonOutlet: RoundedShadowButton!
     
+    var delegate: CenterVCDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,5 +26,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         actionButtonOutlet.animateButton(shouldLoad: true, withMessage: nil)
     }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        delegate?.toggleLeftPanel()
+        
+    }
+    
 }
 
