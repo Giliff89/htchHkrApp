@@ -20,6 +20,8 @@
 		33C338191F9AB901001AAEF3 /* LeftSidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338181F9AB901001AAEF3 /* LeftSidePanelViewController.swift */; };
 		33C3381B1F9AB98E001AAEF3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3381A1F9AB98E001AAEF3 /* ContainerViewController.swift */; };
 		33C3381E1F9EB1E2001AAEF3 /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3381D1F9EB1E2001AAEF3 /* CenterVCDelegate.swift */; };
+		33C338211FA000C7001AAEF3 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338201FA000C7001AAEF3 /* UIViewExt.swift */; };
+		33C338231FA00EF8001AAEF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338221FA00EF8001AAEF3 /* LoginViewController.swift */; };
 		65C2960E772AFF2761401069 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		33C338181F9AB901001AAEF3 /* LeftSidePanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelViewController.swift; sourceTree = "<group>"; };
 		33C3381A1F9AB98E001AAEF3 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		33C3381D1F9EB1E2001AAEF3 /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
+		33C338201FA000C7001AAEF3 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		33C338221FA00EF8001AAEF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
 		ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,7 @@
 		33C337D91F96BFD3001AAEF3 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				33C3381F1FA000A5001AAEF3 /* Extensions */,
 				33C3381C1F9EB1B0001AAEF3 /* Protocols */,
 				33C337EF1F993CE4001AAEF3 /* Controller */,
 				33C337EE1F993CDF001AAEF3 /* View */,
@@ -117,6 +122,7 @@
 				33C337DC1F96BFD3001AAEF3 /* HomeViewController.swift */,
 				33C338181F9AB901001AAEF3 /* LeftSidePanelViewController.swift */,
 				33C3381A1F9AB98E001AAEF3 /* ContainerViewController.swift */,
+				33C338221FA00EF8001AAEF3 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 				33C3381D1F9EB1E2001AAEF3 /* CenterVCDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		33C3381F1FA000A5001AAEF3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				33C338201FA000C7001AAEF3 /* UIViewExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BC1B5D5259A6D2BC2BA70259 /* Pods */ = {
@@ -268,11 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C338231FA00EF8001AAEF3 /* LoginViewController.swift in Sources */,
 				33C3381E1F9EB1E2001AAEF3 /* CenterVCDelegate.swift in Sources */,
 				33C338171F994B77001AAEF3 /* RoundedShadowButton.swift in Sources */,
 				33C338191F9AB901001AAEF3 /* LeftSidePanelViewController.swift in Sources */,
 				33C338151F994947001AAEF3 /* CircleView.swift in Sources */,
 				33C337DD1F96BFD3001AAEF3 /* HomeViewController.swift in Sources */,
+				33C338211FA000C7001AAEF3 /* UIViewExt.swift in Sources */,
 				33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */,
 				33C338131F994843001AAEF3 /* RoundedShadowView.swift in Sources */,
 				33C337DB1F96BFD3001AAEF3 /* AppDelegate.swift in Sources */,
