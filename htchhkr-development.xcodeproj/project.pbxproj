@@ -22,6 +22,7 @@
 		33C3381E1F9EB1E2001AAEF3 /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3381D1F9EB1E2001AAEF3 /* CenterVCDelegate.swift */; };
 		33C338211FA000C7001AAEF3 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338201FA000C7001AAEF3 /* UIViewExt.swift */; };
 		33C338231FA00EF8001AAEF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338221FA00EF8001AAEF3 /* LoginViewController.swift */; };
+		33C338251FA133FE001AAEF3 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */; };
 		65C2960E772AFF2761401069 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		33C3381D1F9EB1E2001AAEF3 /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		33C338201FA000C7001AAEF3 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		33C338221FA00EF8001AAEF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
 		ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				33C338121F994843001AAEF3 /* RoundedShadowView.swift */,
 				33C338141F994947001AAEF3 /* CircleView.swift */,
 				33C338161F994B77001AAEF3 /* RoundedShadowButton.swift */,
+				33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */,
 				33C338131F994843001AAEF3 /* RoundedShadowView.swift in Sources */,
 				33C337DB1F96BFD3001AAEF3 /* AppDelegate.swift in Sources */,
+				33C338251FA133FE001AAEF3 /* RoundedCornerTextField.swift in Sources */,
 				33C3381B1F9AB98E001AAEF3 /* ContainerViewController.swift in Sources */,
 				33C337F11F993D1A001AAEF3 /* GradientView.swift in Sources */,
 			);
