@@ -327,6 +327,9 @@
                                                 <constraint firstAttribute="height" constant="30" id="i1S-NQ-vNY"/>
                                             </constraints>
                                             <state key="normal" image="cancelBtn"/>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="dd6-4Q-Qm0" eventType="touchUpInside" id="gzj-rj-6Ii"/>
+                                            </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cLd-8D-vsx">
                                             <rect key="frame" x="8" y="153" width="360.5" height="361"/>
