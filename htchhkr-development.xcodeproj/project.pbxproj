@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3304B9AF1FBB7898007919AC /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304B9AE1FBB7898007919AC /* DriverAnnotation.swift */; };
+		3304B9B11FBFA889007919AC /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304B9B01FBFA889007919AC /* PassengerAnnotation.swift */; };
 		3347580C1FAA9195009073BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3394FFE91FA91DFC008D0119 /* GoogleService-Info.plist */; };
 		3347580E1FB231D1009073BF /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3347580D1FB231D1009073BF /* UpdateService.swift */; };
 		3394FFEC1FA9241E008D0119 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394FFEB1FA9241E008D0119 /* DataService.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_htchhkr_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3304B9AE1FBB7898007919AC /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
+		3304B9B01FBFA889007919AC /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		3347580D1FB231D1009073BF /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		3394FFE91FA91DFC008D0119 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3394FFEB1FA9241E008D0119 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				33C338161F994B77001AAEF3 /* RoundedShadowButton.swift */,
 				33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */,
 				3304B9AE1FBB7898007919AC /* DriverAnnotation.swift */,
+				3304B9B01FBFA889007919AC /* PassengerAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				33C338191F9AB901001AAEF3 /* LeftSidePanelViewController.swift in Sources */,
 				33C338151F994947001AAEF3 /* CircleView.swift in Sources */,
 				33C337DD1F96BFD3001AAEF3 /* HomeViewController.swift in Sources */,
+				3304B9B11FBFA889007919AC /* PassengerAnnotation.swift in Sources */,
 				33C338211FA000C7001AAEF3 /* UIViewExt.swift in Sources */,
 				3304B9AF1FBB7898007919AC /* DriverAnnotation.swift in Sources */,
 				33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */,
