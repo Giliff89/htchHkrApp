@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
 
     @IBOutlet weak var emailField: RoundedCornerTextField!
     @IBOutlet weak var passwordField: RoundedCornerTextField!
@@ -60,9 +60,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         if let errorCode = AuthErrorCode(rawValue: error!._code) {
                             switch errorCode {
                                 case .wrongPassword:
-                                    print("That password didn't match. Please try again.")
+                                    self.showAlert("That password didn't match. Please try again.")
                                 default:
-                                    print("An unexpected error occured. Please try again.")
+                                    self.showAlert("An unexpected error occured. Please try again.")
                             }
                         }
                         
@@ -71,11 +71,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 if let errorCode = AuthErrorCode(rawValue: error!._code) {
                                     switch errorCode {
                                         case .emailAlreadyInUse:
-                                            print("That email is already in use. Please try again.")
+                                            self.showAlert("That email is already in use. Please try again.")
                                         case .invalidEmail:
-                                            print("That email is invalid. Please try again.")
+                                            self.showAlert("That email is invalid. Please try again.")
                                         default:
-                                            print("An unexpected error occured. Please try again.")
+                                            self.showAlert("An unexpected error occured. Please try again.")
                                     }
                                 }
                             } else {

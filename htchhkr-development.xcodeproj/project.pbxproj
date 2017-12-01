@@ -12,6 +12,7 @@
 		3347580C1FAA9195009073BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3394FFE91FA91DFC008D0119 /* GoogleService-Info.plist */; };
 		3347580E1FB231D1009073BF /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3347580D1FB231D1009073BF /* UpdateService.swift */; };
 		3348ACED1FCF95A200C6A254 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3348ACEC1FCF95A200C6A254 /* UIViewControllerExt.swift */; };
+		33795B3E1FD0D98500ED784F /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33795B3D1FD0D98500ED784F /* Alertable.swift */; };
 		3394FFEC1FA9241E008D0119 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394FFEB1FA9241E008D0119 /* DataService.swift */; };
 		33C337DB1F96BFD3001AAEF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C337DA1F96BFD3001AAEF3 /* AppDelegate.swift */; };
 		33C337DD1F96BFD3001AAEF3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C337DC1F96BFD3001AAEF3 /* HomeViewController.swift */; };
@@ -38,6 +39,7 @@
 		3304B9B01FBFA889007919AC /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		3347580D1FB231D1009073BF /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		3348ACEC1FCF95A200C6A254 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		33795B3D1FD0D98500ED784F /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		3394FFE91FA91DFC008D0119 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3394FFEB1FA9241E008D0119 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		33C337D71F96BFD3001AAEF3 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				33C3381D1F9EB1E2001AAEF3 /* CenterVCDelegate.swift */,
+				33795B3D1FD0D98500ED784F /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				3304B9B11FBFA889007919AC /* PassengerAnnotation.swift in Sources */,
 				33C338211FA000C7001AAEF3 /* UIViewExt.swift in Sources */,
 				3304B9AF1FBB7898007919AC /* DriverAnnotation.swift in Sources */,
+				33795B3E1FD0D98500ED784F /* Alertable.swift in Sources */,
 				33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */,
 				3347580E1FB231D1009073BF /* UpdateService.swift in Sources */,
 				33C338131F994843001AAEF3 /* RoundedShadowView.swift in Sources */,
