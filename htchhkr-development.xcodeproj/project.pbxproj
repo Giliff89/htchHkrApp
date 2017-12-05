@@ -30,6 +30,8 @@
 		33C338211FA000C7001AAEF3 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338201FA000C7001AAEF3 /* UIViewExt.swift */; };
 		33C338231FA00EF8001AAEF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338221FA00EF8001AAEF3 /* LoginViewController.swift */; };
 		33C338251FA133FE001AAEF3 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */; };
+		33EA29231FD72D8F00396B9B /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA29221FD72D8F00396B9B /* PickupViewController.swift */; };
+		33EA29251FD72EB900396B9B /* RoundMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA29241FD72EB900396B9B /* RoundMapView.swift */; };
 		65C2960E772AFF2761401069 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		33C338201FA000C7001AAEF3 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		33C338221FA00EF8001AAEF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		33EA29221FD72D8F00396B9B /* PickupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
+		33EA29241FD72EB900396B9B /* RoundMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundMapView.swift; sourceTree = "<group>"; };
 		4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
 		ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +144,7 @@
 				33C338241FA133FE001AAEF3 /* RoundedCornerTextField.swift */,
 				3304B9AE1FBB7898007919AC /* DriverAnnotation.swift */,
 				3304B9B01FBFA889007919AC /* PassengerAnnotation.swift */,
+				33EA29241FD72EB900396B9B /* RoundMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				33C338181F9AB901001AAEF3 /* LeftSidePanelViewController.swift */,
 				33C3381A1F9AB98E001AAEF3 /* ContainerViewController.swift */,
 				33C338221FA00EF8001AAEF3 /* LoginViewController.swift */,
+				33EA29221FD72D8F00396B9B /* PickupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EA29231FD72D8F00396B9B /* PickupViewController.swift in Sources */,
 				33C338231FA00EF8001AAEF3 /* LoginViewController.swift in Sources */,
 				3394FFEC1FA9241E008D0119 /* DataService.swift in Sources */,
 				3348ACED1FCF95A200C6A254 /* UIViewControllerExt.swift in Sources */,
@@ -327,6 +334,7 @@
 				33795B3E1FD0D98500ED784F /* Alertable.swift in Sources */,
 				33C338111F99470F001AAEF3 /* RoundImageView.swift in Sources */,
 				3347580E1FB231D1009073BF /* UpdateService.swift in Sources */,
+				33EA29251FD72EB900396B9B /* RoundMapView.swift in Sources */,
 				33C338131F994843001AAEF3 /* RoundedShadowView.swift in Sources */,
 				33C337DB1F96BFD3001AAEF3 /* AppDelegate.swift in Sources */,
 				33C338251FA133FE001AAEF3 /* RoundedCornerTextField.swift in Sources */,
