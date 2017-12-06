@@ -62,6 +62,27 @@ class HomeViewController: UIViewController, Alertable {
         revealingSplashView.startAnimation()
         
         revealingSplashView.heartAttack = true
+        
+        UpdateService.instance.observeTrips { (tripDict) in
+            if let tripDict = tripDict {
+                let pickupCoordinateArray = tripDict["pickupCoordinate"] as! NSArray
+                let tripKey = tripDict["passengerKey"] as! String
+                let acceptanceStatus = tripDict["tripIsAccepted"] as! Bool
+                
+                if acceptanceStatus == false {
+                    DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (available) in
+                        if let available = available {
+                            if available == true {
+                                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                let pickupViewController = storyboard.instantiateViewController(withIdentifier: "pickupViewController") as? PickupViewController
+                                pickupViewController?.initData(coordinate: CLLocationCoordinate2D(latitude: pickupCoordinateArray[0] as! CLLocationDegrees, longitude: pickupCoordinateArray[1] as! CLLocationDegrees), passengerKey: tripKey)
+                                self.present(pickupViewController!, animated: true, completion: nil)
+                            }
+                        }
+                    })
+                }
+            }
+        }
     }
     
     func checkLocationAuthStatus() {
@@ -125,7 +146,11 @@ class HomeViewController: UIViewController, Alertable {
 
     @IBAction func actionButtonPressed(_ sender: Any) {
         
+        UpdateService.instance.updateTripsWithCoordinatesUponRequest()
         actionButtonOutlet.animateButton(shouldLoad: true, withMessage: nil)
+        
+        self.view.endEditing(true)
+        destinationTextField.isUserInteractionEnabled = false
     }
     
     @IBAction func centerMapButtonPressed(_ sender: Any) {
