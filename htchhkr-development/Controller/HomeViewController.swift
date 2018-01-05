@@ -12,6 +12,12 @@ import RevealingSplashView
 import CoreLocation
 import Firebase
 
+enum AnnotationType {
+    case pickup
+    case destination
+    case driver
+}
+
 class HomeViewController: UIViewController, Alertable {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -128,6 +134,8 @@ class HomeViewController: UIViewController, Alertable {
                                 
                                     self.dropPinFor(placemark: pickupPlacemark)
                                     self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
+                                    
+                                    self.setCustomRegion(forAnnotationType: .pickup, withCoordinate: pickupCoordinate)
                                 }
                             }
                         }
@@ -298,6 +306,34 @@ extension HomeViewController: CLLocationManagerDelegate {
             mapView.showsUserLocation = true
             mapView.userTrackingMode = .follow
         }
+    }
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, passengerKey) in
+            if isOnTrip == true {
+                if region.identifier == "pickup" {
+                    self.actionButtonOutlet.setTitle("Start Trip", for: .normal)
+                    print("Driver entered pickup region")
+                } else if region.identifier == "destination" {
+                    self.cancelTripButton.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+                    self.cancelTripButton.isHidden = true
+                    self.actionButtonOutlet.setTitle("End Trip", for: .normal)
+                }
+            }
+        })
+    }
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                if region.identifier == "pickup" {
+                    // call an action on the button that will load directions to passenger pickup
+                    print("Driver exited pickup region")
+                    self.actionButtonOutlet.setTitle("Get Directions", for: .normal)
+                } else if region.identifier == "destination" {
+                    // call and action on the button that will load directions to destination
+                    self.actionButtonOutlet.setTitle("Get Directions", for: .normal)
+                }
+            }
+        })
     }
 }
 
@@ -491,6 +527,15 @@ extension HomeViewController: MKMapViewDelegate {
             if overlay is MKPolyline {
                 mapView.remove(overlay)
             }
+        }
+    }
+    func setCustomRegion(forAnnotationType type: AnnotationType, withCoordinate coordinate: CLLocationCoordinate2D) {
+        if type == .pickup {
+            let pickupRegion = CLCircularRegion(center: coordinate, radius: 100, identifier: "pickup")
+            manager?.startMonitoring(for: pickupRegion)
+        } else if type == .destination {
+            let destinationRegion = CLCircularRegion(center: coordinate, radius: 100, identifier: "destination")
+            manager?.startMonitoring(for: destinationRegion)
         }
     }
 }
