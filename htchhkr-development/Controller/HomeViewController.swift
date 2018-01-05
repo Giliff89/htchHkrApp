@@ -18,6 +18,14 @@ enum AnnotationType {
     case driver
 }
 
+enum ButtonAction {
+    case requestRide
+    case getDirectionsToPassenger
+    case getDirectionsToDestination
+    case startTrip
+    case endTrip
+}
+
 class HomeViewController: UIViewController, Alertable {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -45,6 +53,8 @@ class HomeViewController: UIViewController, Alertable {
     
     var selectedItemPlacemark: MKPlacemark? = nil
     
+    var actionForButton: ButtonAction = .requestRide
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,12 +79,12 @@ class HomeViewController: UIViewController, Alertable {
             })
         })
         
+        cancelTripButton.alpha = 0.0
+        
         self.view.addSubview(revealingSplashView)
         
         revealingSplashView.animationType = SplashAnimationType.heartBeat
         revealingSplashView.startAnimation()
-        
-        revealingSplashView.heartAttack = true
         
         UpdateService.instance.observeTrips { (tripDict) in
             if let tripDict = tripDict {
@@ -100,6 +110,12 @@ class HomeViewController: UIViewController, Alertable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        DataService.instance.userIsDriver(userKey: currentUserId!, handler: { (status) in
+            if status == true {
+                self.buttonsForDriver(areHidden: true)
+            }
+        })
         
         DataService.instance.REF_TRIPS.observe(.childRemoved, with: { (removedTripSnapshot) in
             let removedTripDict = removedTripSnapshot.value as? [String: AnyObject]
@@ -136,6 +152,11 @@ class HomeViewController: UIViewController, Alertable {
                                     self.searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: MKMapItem(placemark: pickupPlacemark))
                                     
                                     self.setCustomRegion(forAnnotationType: .pickup, withCoordinate: pickupCoordinate)
+                                    
+                                    self.actionForButton = .getDirectionsToPassenger
+                                    self.actionButtonOutlet.setTitle("Get Directions", for: .normal)
+                                    
+                                    self.buttonsForDriver(areHidden: false)
                                 }
                             }
                         }
@@ -151,6 +172,24 @@ class HomeViewController: UIViewController, Alertable {
             manager?.startUpdatingLocation()
         } else {
             manager?.requestAlwaysAuthorization()
+        }
+    }
+    
+    func buttonsForDriver(areHidden: Bool) {
+        if areHidden {
+            self.actionButtonOutlet.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+            self.cancelTripButton.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+            self.centerMapButton.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+            self.actionButtonOutlet.isHidden = true
+            self.cancelTripButton.isHidden = true
+            self.centerMapButton.isHidden = true
+        } else {
+            self.actionButtonOutlet.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+            self.cancelTripButton.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+            self.centerMapButton.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+            self.actionButtonOutlet.isHidden = false
+            self.cancelTripButton.isHidden = false
+            self.centerMapButton.isHidden = false
         }
     }
     
@@ -198,6 +237,7 @@ class HomeViewController: UIViewController, Alertable {
                 }
             }
         })
+        revealingSplashView.heartAttack = true
     }
     
     func connectUserAndDriverForTrip() {
@@ -250,12 +290,7 @@ class HomeViewController: UIViewController, Alertable {
     }
 
     @IBAction func actionButtonPressed(_ sender: Any) {
-        
-        UpdateService.instance.updateTripsWithCoordinatesUponRequest()
-        actionButtonOutlet.animateButton(shouldLoad: true, withMessage: nil)
-        
-        self.view.endEditing(true)
-        destinationTextField.isUserInteractionEnabled = false
+        buttonSelector(forAction: actionForButton)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -296,6 +331,42 @@ class HomeViewController: UIViewController, Alertable {
     
     @IBAction func menuButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel()
+    }
+    
+    func buttonSelector(forAction action: ButtonAction) {
+        switch action {
+        case .requestRide:
+            if destinationTextField.text != "" {
+                UpdateService.instance.updateTripsWithCoordinatesUponRequest()
+                actionButtonOutlet.animateButton(shouldLoad: true, withMessage: nil)
+                cancelTripButton.fadeTo(alphaValue: 1.0, withDuration: 0.2)
+                
+                self.view.endEditing(true)
+                destinationTextField.isUserInteractionEnabled = false
+            }
+        case .getDirectionsToPassenger:
+            DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    DataService.instance.REF_TRIPS.child(tripKey!).observe(.value, with: { (tripSnapshot) in
+                        let tripDict = tripSnapshot.value as? Dictionary<String, AnyObject>
+                        
+                        let pickupCoordinateArray = tripDict?["pickupCoordinate"] as! NSArray
+                        let pickupCoordinate = CLLocationCoordinate2D(latitude: pickupCoordinateArray[0] as! CLLocationDegrees, longitude: pickupCoordinateArray[1] as! CLLocationDegrees)
+                        
+                        let pickupMapItem = MKMapItem(placemark: MKPlacemark(coordinate: pickupCoordinate))
+                        
+                        pickupMapItem.name = "Passenger Pickup Point"
+                        pickupMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+                    })
+                }
+            })
+        case .startTrip:
+            print("Start trip")
+        case .getDirectionsToDestination:
+            print("Directions to Destination")
+        case .endTrip:
+            print("End Trip")
+        }
     }
 }
 
