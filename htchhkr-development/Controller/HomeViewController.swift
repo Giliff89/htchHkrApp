@@ -385,9 +385,26 @@ class HomeViewController: UIViewController, Alertable {
                 }
             })
         case .getDirectionsToDestination:
-            print("Directions to Destination")
+            DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    DataService.instance.REF_TRIPS.child(tripKey!).child("destinationCoordinate").observe(.value, with: { (snapshot) in
+                        let destinationCoordinateArray = snapshot.value as! NSArray
+                        let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationCoordinateArray[0] as! CLLocationDegrees, longitude: destinationCoordinateArray[1] as! CLLocationDegrees)
+                        let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate)
+                        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+                        
+                        destinationMapItem.name = "Passenger Destination"
+                        destinationMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+                    })
+                }
+            })
         case .endTrip:
-            print("End Trip")
+            DataService.instance.driverIsOnTrip(driverKey: self.currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
+                if isOnTrip == true {
+                    UpdateService.instance.cancelTrip(withPassengerKey: tripKey!, forDriverKey: driverKey!)
+                    self.buttonsForDriver(areHidden: true)
+                }
+            })
         }
     }
 }
@@ -410,6 +427,7 @@ extension HomeViewController: CLLocationManagerDelegate {
                 } else if region.identifier == "destination" {
                     self.cancelTripButton.fadeTo(alphaValue: 0.0, withDuration: 0.2)
                     self.cancelTripButton.isHidden = true
+                    self.actionForButton = .endTrip
                     self.actionButtonOutlet.setTitle("End Trip", for: .normal)
                 }
             }
