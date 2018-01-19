@@ -33,6 +33,7 @@
 		33EA29231FD72D8F00396B9B /* PickupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA29221FD72D8F00396B9B /* PickupViewController.swift */; };
 		33EA29251FD72EB900396B9B /* RoundMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA29241FD72EB900396B9B /* RoundMapView.swift */; };
 		65C2960E772AFF2761401069 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247845E382DD1AB41F9C0747 /* Pods_htchhkr_development.framework */; };
+		8A0587892011687C007BA112 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0587882011687C007BA112 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		33EA29221FD72D8F00396B9B /* PickupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupViewController.swift; sourceTree = "<group>"; };
 		33EA29241FD72EB900396B9B /* RoundMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundMapView.swift; sourceTree = "<group>"; };
 		4036E06E8386685EC1B4C7C4 /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0587882011687C007BA112 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ABF015F60E63B97346CDB4C6 /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 		33C337D91F96BFD3001AAEF3 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				8A05878720116860007BA112 /* Resources */,
 				3394FFEA1FA923F7008D0119 /* Services */,
 				33C3381F1FA000A5001AAEF3 /* Extensions */,
 				33C3381C1F9EB1B0001AAEF3 /* Protocols */,
@@ -177,6 +180,14 @@
 				3348ACEC1FCF95A200C6A254 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A05878720116860007BA112 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A0587882011687C007BA112 /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BC1B5D5259A6D2BC2BA70259 /* Pods */ = {
@@ -320,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EA29231FD72D8F00396B9B /* PickupViewController.swift in Sources */,
+				8A0587892011687C007BA112 /* Constants.swift in Sources */,
 				33C338231FA00EF8001AAEF3 /* LoginViewController.swift in Sources */,
 				3394FFEC1FA9241E008D0119 /* DataService.swift in Sources */,
 				3348ACED1FCF95A200C6A254 /* UIViewControllerExt.swift in Sources */,

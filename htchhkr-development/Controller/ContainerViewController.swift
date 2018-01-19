@@ -175,14 +175,14 @@ extension ContainerViewController: CenterVCDelegate {
 
 private extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
+        return UIStoryboard(name: MAIN_STORYBOARD, bundle: Bundle.main)
     }
     
     class func leftViewController() -> LeftSidePanelViewController {
-        return (mainStoryboard().instantiateViewController(withIdentifier: "LeftSidePanelViewController") as? LeftSidePanelViewController)!
+        return (mainStoryboard().instantiateViewController(withIdentifier: VC_LEFT_PANEL) as? LeftSidePanelViewController)!
     }
     
     class func homeViewController() -> HomeViewController {
-        return (mainStoryboard().instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController)!
+        return (mainStoryboard().instantiateViewController(withIdentifier: VC_HOME) as? HomeViewController)!
     }
 }

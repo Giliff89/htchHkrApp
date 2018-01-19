@@ -36,7 +36,7 @@ class PickupViewController: UIViewController {
         
         DataService.instance.REF_TRIPS.child(passengerKey).observe(.value, with: { (tripSnapshot) in
             if tripSnapshot.exists() {
-                if tripSnapshot.childSnapshot(forPath: "tripIsAccepted").value as? Bool == true {
+                if tripSnapshot.childSnapshot(forPath: TRIP_IS_ACCEPTED).value as? Bool == true {
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
@@ -71,7 +71,7 @@ extension PickupViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
-        annotationView?.image = UIImage(named: "destinationAnnotation")
+        annotationView?.image = UIImage(named: ANNO_DESTINATION)
         
         return annotationView
     }

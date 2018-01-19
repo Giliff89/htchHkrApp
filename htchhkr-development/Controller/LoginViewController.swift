@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
                                 let userData = ["provider": user.providerID] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                             } else {
-                                let userData = ["provider": user.providerID, "userIsDriver": true, "isPickupModeEnabled": false, "driverIsOnTrip": false] as [String: Any]
+                                let userData = ["provider": user.providerID, ACCOUNT_IS_DRIVER: true, ACCOUNT_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
@@ -60,9 +60,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
                         if let errorCode = AuthErrorCode(rawValue: error!._code) {
                             switch errorCode {
                                 case .wrongPassword:
-                                    self.showAlert("That password didn't match. Please try again.")
+                                    self.showAlert(ERROR_MSG_WRONG_PASSWORD)
                                 default:
-                                    self.showAlert("An unexpected error occured. Please try again.")
+                                    self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                             }
                         }
                         
@@ -71,11 +71,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
                                 if let errorCode = AuthErrorCode(rawValue: error!._code) {
                                     switch errorCode {
                                         case .emailAlreadyInUse:
-                                            self.showAlert("That email is already in use. Please try again.")
+                                            self.showAlert(ERROR_MSG_EMAIL_ALREADY_IN_USE)
                                         case .invalidEmail:
-                                            self.showAlert("That email is invalid. Please try again.")
+                                            self.showAlert(ERROR_MSG_INVALID_EMAIL)
                                         default:
-                                            self.showAlert("An unexpected error occured. Please try again.")
+                                            self.showAlert(ERROR_MSG_UNEXPECTED_ERROR)
                                     }
                                 }
                             } else {
@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
                                         let userData = ["provider": user.providerID] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                                     } else {
-                                        let userData = ["provider": user.providerID, "userIsDriver": true, "isPickupModeEnabled": false, "driverIsOnTrip": false] as [String: Any]
+                                        let userData = ["provider": user.providerID, ACCOUNT_IS_DRIVER: true, ACCOUNT_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                     }
                                 }
