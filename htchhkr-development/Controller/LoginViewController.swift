@@ -54,7 +54,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
-                        print("Email user authenticated successfully with Firebase")
                         self.dismiss(animated: true, completion: nil)
                     } else {
                         if let errorCode = AuthErrorCode(rawValue: error!._code) {
@@ -88,7 +87,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, Alertable {
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                     }
                                 }
-                                print("Successfully created a new user with Firebase")
                                 self.dismiss(animated: true, completion: nil)
                             }
                         })

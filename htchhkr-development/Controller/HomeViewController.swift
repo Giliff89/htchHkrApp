@@ -423,7 +423,6 @@ extension HomeViewController: CLLocationManagerDelegate {
                 if region.identifier == REGION_PICKUP {
                     self.actionForButton = .startTrip
                     self.actionButtonOutlet.setTitle(MSG_START_TRIP, for: .normal)
-                    print("Driver entered pickup region")
                 } else if region.identifier == REGION_DESTINATION {
                     self.cancelTripButton.fadeTo(alphaValue: 0.0, withDuration: 0.2)
                     self.cancelTripButton.isHidden = true
@@ -437,11 +436,10 @@ extension HomeViewController: CLLocationManagerDelegate {
         DataService.instance.driverIsOnTrip(driverKey: currentUserId!, handler: { (isOnTrip, driverKey, tripKey) in
             if isOnTrip == true {
                 if region.identifier == REGION_PICKUP {
-                    // call an action on the button that will load directions to passenger pickup
-                    print("Driver exited pickup region")
+                    self.actionForButton = .getDirectionsToPassenger
                     self.actionButtonOutlet.setTitle(MSG_GET_DIRECTIONS, for: .normal)
                 } else if region.identifier == REGION_DESTINATION {
-                    // call and action on the button that will load directions to destination
+                    self.actionForButton = .getDirectionsToDestination
                     self.actionButtonOutlet.setTitle(MSG_GET_DIRECTIONS, for: .normal)
                 }
             }
@@ -768,11 +766,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         searchMapKitForResultsWithPolyline(forOriginMapItem: nil, withDestinationMapItem: selectedMapItem)
         
         animateTableView(shouldShow: false)
-        print("selected")
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if destinationTextField.text == "" {
             animateTableView(shouldShow: false)
